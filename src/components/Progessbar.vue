@@ -11,8 +11,8 @@ const props = defineProps<{
 <template>
   <div>
     <div class="flex justify-between text-sm mb-1">
-      <span>{{ label }}</span>
-      <span>{{ value }}%</span>
+      <span>{{ props.label }}</span>
+      <span>{{ props.value }}%</span>
     </div>
     <div class="w-full h-1.5 bg-gray-200 rounded">
       <div class="h-1.5 bg-red-400 rounded" :style="{ width: `${value}%` }"></div>

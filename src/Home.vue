@@ -1,13 +1,56 @@
 <script setup lang="ts">
+import { ref, watchEffect } from 'vue';
 import Navbar from './components/Navbar.vue';
 import SideBar from './components/SideBar.vue';
+
+// Template Refs for your sections
+const HomeRef = ref<HTMLElement | null>(null);
+const ServicesRef = ref<HTMLElement | null>(null);
+const EducationRef = ref<HTMLElement | null>(null);
+const WorkRef = ref<HTMLElement | null>(null);
+
+// A map to easily find the correct ref based on the string ID
+const sectionRefs = {
+  Home: HomeRef,
+  Services: ServicesRef,
+  Education: EducationRef,
+  Work: WorkRef,
+};
+
+// This method is called when the Navbar emits the event
+function scrollToTarget(id: string) {
+  const targetRef = sectionRefs[id as keyof typeof sectionRefs];
+  if (targetRef?.value) {
+    targetRef.value.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+// --- THEME TOGGLE LOGIC ---
+
+// 1. State: Create a reactive variable for the current theme.
+const theme = ref<'light' | 'dark'>('light');
+
+// 2. Logic: Create a function that toggles the theme state.
+function toggleTheme() {
+  theme.value = theme.value === 'light' ? 'dark' : 'light';
+}
+
+// 3. Side Effect: Watch the 'theme' ref and update the DOM accordingly.
+// This is the magic that makes Tailwind's dark: prefixes work.
+watchEffect(() => {
+  if (theme.value === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+});
 </script>
 
 <template>
 <div class="outer-container flex w-full relative min-h-screen">   
 <SideBar/>
 <div class="relative main-container ml-76 mr-16">
-    <div class="flex rounded-[10px] items-center p-[1rem] bg-white text-black shadow-md">
+    <div ref="HomeRef" id="Home" class="flex rounded-[10px] items-center p-[1rem] bg-white text-black shadow-md">
         <div class="flex-col p-[1rem] items-center text-left">
             <div class="text-[36px] font-bold pb-[1rem]">
                 I'm <br>
@@ -23,21 +66,21 @@ import SideBar from './components/SideBar.vue';
                 and developed multiple systems using these and 
                 other skills i have accumulated over the years.
             </div>
-            <button class="flex gap-2 bg-[red] px-[2rem] py-[0.5rem] rounded-[5px] font-[400] text-[14px]">
+            <button class="flex gap-2 bg-red-500 px-[2rem] py-[0.5rem] rounded-[5px] font-[400] text-[14px]">
                 <div>HIRE ME</div> <div><i class="fa-solid fa-arrow-right text-[12px]"></i></div>
             </button> 
         </div>
         <div class="flex">
             <img 
-            class="max-w-[200px] max-h-[300px] rounded-lg shadow-lg" 
-            src="../src/assets/wallpaperflare.com_wallpaper (19).jpg" 
+            class="max-w-[200px] max-h-[300px] rounded-lg" 
+            src="../src/assets/myphoto_improved.png" 
             alt="profile"
             />
         </div>
     </div>
 
     <!-- Middle Container -->
-    <div class="bg-[#F0F0F6] mt-[2rem] w-[100%]">
+    <div ref="ServicesRef" id="Services" class="bg-[#F0F0F6] mt-[2rem] w-[100%]">
         <div class="w-[100%]">
         <h2 class="text-[2rem] text-center font-semibold mb-4">My Services</h2>
         <p class="text-gray-500 text-center">
@@ -71,7 +114,7 @@ import SideBar from './components/SideBar.vue';
 
     </div>
 
-    <div class="bg-[#F0F0F6] mt-[2rem] w-[100%]">
+    <div ref="EducationRef" id="Education" class="bg-[#F0F0F6] mt-[2rem] w-[100%]">
         <div class="w-[100%]">
         <h2 class="text-[2rem] text-center font-semibold mb-4">Education</h2>
         <p class="text-gray-500 text-center">
@@ -132,7 +175,7 @@ import SideBar from './components/SideBar.vue';
         </div>
     </div>
 
-    <div class="bg-[#F0F0F6] mt-[2rem] w-[100%]">
+    <div ref="WorkRef" id="Work" class="bg-[#F0F0F6] mt-[2rem] w-[100%]">
         <div class="w-[100%]">
         <h2 class="text-[2rem] text-center font-semibold mb-4">Work History</h2>
         <p class="text-gray-500 text-center">
@@ -193,7 +236,7 @@ import SideBar from './components/SideBar.vue';
         </div>
     </div>
 </div>
-<Navbar/>
+<Navbar @scrollToSection="scrollToTarget" @toggle-theme="toggleTheme"/>
 </div> 
 </template>
 

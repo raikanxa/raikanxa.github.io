@@ -42,21 +42,29 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 
 const active = ref("Home");
 
 const menu = [
   { name: "Home", label: "Home", icon: "fas fa-home" },
-  { name: "Code", label: "Code", icon: "fas fa-code" },
+  { name: "Services", label: "Services", icon: "fas fa-code" },
   { name: "Education", label: "Education", icon: "fas fa-graduation-cap" },
   { name: "Work", label: "Work", icon: "fas fa-briefcase" },
-  { name: "Chat", label: "Chat", icon: "fas fa-comment" }
+  // { name: "Chat", label: "Chat", icon: "fas fa-comment" }
 ];
 
-function setActive(name) {
+const emit = defineEmits<{
+  (e: 'scrollToSection', id: string): void
+  (e: 'toggle-theme'): void
+}>()
+
+
+function setActive(name: string) {
   active.value = name;
+
+  emit('scrollToSection', name);
 }
 </script>
 

@@ -7,7 +7,7 @@ import Progessbar from './Progessbar.vue';
     <!-- Profile Section -->
     <div class="flex flex-col items-center p-6">
       <img
-        src="../assets/wallpaperflare.com_wallpaper (19).jpg"
+        src="../assets/myphoto_improved.png"
         alt="profile"
         class="w-24 h-24 rounded-full border-4 border-white shadow-md"
       />
@@ -87,7 +87,7 @@ import Progessbar from './Progessbar.vue';
     <!-- CV Button -->
     <div class="px-6 py-6">
       <button
-        class="w-full bg-red-400 text-black font-semibold py-2 rounded flex items-center justify-center gap-2 hover:bg-yellow-500 transition"
+        class="w-full bg-red-400 text-black font-semibold py-2 rounded flex items-center justify-center gap-2 hover:bg-red-500 transition"
       >
         <span>Download CV</span>
         <i class="fas fa-download"></i>

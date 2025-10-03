@@ -53,7 +53,7 @@ watchEffect(() => {
 <SideBar/>
 <!-- </CustomScrollBar> -->
 <div class="relative main-container ml-76 mr-16">
-    <div ref="HomeRef" id="Home" class="flex rounded-[10px] items-center p-[1rem] bg-white text-black shadow-md">
+    <div ref="HomeRef" id="Home" class="flex items-center px-[1rem] bg-white text-black shadow-md">
         <div class="flex-col p-[1rem] items-center text-left">
             <div class="text-[36px] font-bold pb-[1rem]">
                 I'm a<br>
@@ -69,13 +69,13 @@ watchEffect(() => {
                 and developed multiple systems using these and 
                 other skills i have accumulated over the years.
             </div>
-            <button class="flex gap-2 bg-[#C0392B] px-[2rem] py-[0.5rem] rounded-[5px] font-[400] text-[14px]">
-                <div>HIRE ME</div> <div><i class="fa-solid fa-arrow-right text-[12px]"></i></div>
-            </button> 
+            <!-- <button class="flex gap-2 bg-[#C0392B] px-[2rem] py-[0.5rem] rounded-[5px] font-[400] text-[14px]">
+                <div class="font-semibold">HIRE ME</div> <div><i class="fa-solid fa-arrow-right text-[12px]"></i></div>
+            </button>  -->
         </div>
         <div class="flex">
             <img 
-            class="max-w-[200px] max-h-[300px] rounded-lg" 
+            class="max-w-[200px] max-h-[300px]" 
             src="../src/assets/myphoto_improved.png" 
             alt="profile"
             />
@@ -91,7 +91,7 @@ watchEffect(() => {
         </p>
         </div>
         <div class="flex mt-[1rem] w-full gap-2 justify-around flex-wrap">
-            <div class="flex-col bg-white w-[30%] text-center rounded-lg py-[2rem]">
+            <div class="flex-col bg-white w-[40%] text-center py-[2rem] shadow-md">
                 <div class="p-[0.5rem] flex justify-center">
                     <img src="../src/assets/homepage/server.png"/>
                 </div>
@@ -104,7 +104,7 @@ watchEffect(() => {
                 </p>
                 </div>
             </div>
-            <div class="flex-col bg-white w-[30%]  text-center rounded-lg py-[2rem]">
+            <div class="flex-col bg-white w-[40%]  text-center py-[2rem] shadow-md">
                 <div class="p-[0.5rem] flex justify-center">
                     <img src="../src/assets/homepage/web_development.png"/>
                 </div>
@@ -128,8 +128,8 @@ watchEffect(() => {
         
         </p>
         </div>
-        <div class="flex-col bg-white mt-[1rem] p-[1rem] w-full justify-around flex-wrap">
-            <div class="flex py-[1.2rem] justify-between border-b-[1.5px] border-gray-300">
+        <div class="flex-col bg-white mt-[1rem] p-[1rem] w-full justify-around flex-wrap shadow-md">
+            <div class="flex py-[1.2rem] justify-between">
                 <div class="w-[30%] text-left">
                     <div class="font-semibold mb-[2rem]">
                         Texas College of Management & It
@@ -154,7 +154,10 @@ watchEffect(() => {
                     </div>
                 </div>
             </div>
-            <div class="flex py-[1.2rem] justify-between border-b-[1.5px] border-gray-300">
+            <div>
+                <hr class="bg-[whitesmoke] h-[2px] border-none"/>
+            </div>
+            <div class="flex py-[1.2rem] justify-between">
                 <div class="w-[30%] text-left">
                     <div class="font-semibold mb-[2rem]">
                         Uniglobe Higher Secondary School
@@ -191,8 +194,8 @@ watchEffect(() => {
             this time.
         </p>
         </div>
-        <div class="flex-col bg-white mt-[1rem] p-[1rem] w-full justify-around flex-wrap">
-            <div class="flex py-[1.2rem] justify-between border-b-[1.5px] border-gray-300">
+        <div class="flex-col bg-white mt-[1rem] p-[1rem] w-full justify-around flex-wrap shadow-md">
+            <div class="flex py-[1.2rem] justify-between">
                 <div class="w-[30%] text-left">
                     <div class="font-semibold mb-[2rem]">
                         Professional
@@ -216,7 +219,10 @@ watchEffect(() => {
                     </div>
                 </div>
             </div>
-            <div class="flex py-[1.2rem] justify-between border-b-[1.5px] border-gray-300">
+            <div>
+                <hr class="bg-[whitesmoke] h-[2px] border-none"/>
+            </div>
+            <div class="flex py-[1.2rem] justify-between">
                 <div class="w-[30%] text-left">
                     <div class="font-semibold mb-[2rem]">
                         BITSPANDA TECHNOLOGY PVT. LTD.
@@ -252,7 +258,8 @@ watchEffect(() => {
     width: 100%;
     background: #FAFAFA;
     display: flex;
-    padding: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;

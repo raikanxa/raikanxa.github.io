@@ -2,7 +2,7 @@
   <!-- <div class="flex flex-col items-center w-16 py-4 space-y-6 bg-white shadow-md h-[100%] max-h-[100%]"> -->
   <div class="fixed right-0 top-0 flex flex-col items-center w-16 py-4 space-y-6 bg-white shadow-md h-screen">
     <!-- Dark Mode Toggle -->
-    <button
+    <!-- <button
       class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100"
       @click="$emit('toggle-theme')"
     >
@@ -11,7 +11,7 @@
       src="../assets/navbar/Contrast.png" 
       alt="Theme"
       />
-    </button>
+    </button> -->
 
     <!-- Menu -->
     <nav class="flex flex-col items-center space-y-6">

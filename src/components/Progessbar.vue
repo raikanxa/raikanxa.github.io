@@ -15,7 +15,7 @@ const props = defineProps<{
       <span>{{ props.value }}%</span>
     </div>
     <div class="w-full h-1.5 bg-gray-200 rounded">
-      <div class="h-1.5 bg-red-400 rounded" :style="{ width: `${value}%` }"></div>
+      <div class="h-1.5 bg-[#C0392B] rounded" :style="{ width: `${value}%` }"></div>
     </div>
   </div>
 </template>

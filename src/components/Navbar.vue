@@ -25,7 +25,7 @@
           :class="[
             'flex items-center justify-center w-12 h-12 rounded-full transition-all',
             active === item.name
-              ? 'bg-red-500 text-black'
+              ? 'bg-[#C0392B] text-black'
               : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
           ]"
         >

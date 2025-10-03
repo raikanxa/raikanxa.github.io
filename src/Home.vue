@@ -2,6 +2,7 @@
 import { ref, watchEffect } from 'vue';
 import Navbar from './components/Navbar.vue';
 import SideBar from './components/SideBar.vue';
+// import CustomScrollBar from './components/CustomScrollBar.vue';
 
 // Template Refs for your sections
 const HomeRef = ref<HTMLElement | null>(null);
@@ -48,13 +49,15 @@ watchEffect(() => {
 
 <template>
 <div class="outer-container flex w-full relative min-h-screen">   
+<!-- <CustomScrollBar> -->
 <SideBar/>
+<!-- </CustomScrollBar> -->
 <div class="relative main-container ml-76 mr-16">
     <div ref="HomeRef" id="Home" class="flex rounded-[10px] items-center p-[1rem] bg-white text-black shadow-md">
         <div class="flex-col p-[1rem] items-center text-left">
             <div class="text-[36px] font-bold pb-[1rem]">
-                I'm <br>
-                <span class="text-[red]">
+                I'm a<br>
+                <span class="text-[#C0392B]">
                 Fullstack
                 </span> 
                 Developer
@@ -66,7 +69,7 @@ watchEffect(() => {
                 and developed multiple systems using these and 
                 other skills i have accumulated over the years.
             </div>
-            <button class="flex gap-2 bg-red-500 px-[2rem] py-[0.5rem] rounded-[5px] font-[400] text-[14px]">
+            <button class="flex gap-2 bg-[#C0392B] px-[2rem] py-[0.5rem] rounded-[5px] font-[400] text-[14px]">
                 <div>HIRE ME</div> <div><i class="fa-solid fa-arrow-right text-[12px]"></i></div>
             </button> 
         </div>
@@ -80,7 +83,7 @@ watchEffect(() => {
     </div>
 
     <!-- Middle Container -->
-    <div ref="ServicesRef" id="Services" class="bg-[#F0F0F6] mt-[2rem] w-[100%]">
+    <div ref="ServicesRef" id="Services" class="bg-inherit mt-[2rem] w-[100%]">
         <div class="w-[100%]">
         <h2 class="text-[2rem] text-center font-semibold mb-4">My Services</h2>
         <p class="text-gray-500 text-center">
@@ -89,7 +92,9 @@ watchEffect(() => {
         </div>
         <div class="flex mt-[1rem] w-full gap-2 justify-around flex-wrap">
             <div class="flex-col bg-white w-[30%] text-center rounded-lg py-[2rem]">
-                <div class="p-[0.5rem]"><i class="fa-solid fa-server text-[4rem] text-red-500"></i></div>
+                <div class="p-[0.5rem] flex justify-center">
+                    <img src="../src/assets/homepage/server.png"/>
+                </div>
                 <div class="p-[0.5rem]"><span class="text-[1.2rem] font-[500]">Backend Development</span></div>
                 <div class="p-[0.5rem]">                
                 <p class="text-gray-500">
@@ -100,7 +105,9 @@ watchEffect(() => {
                 </div>
             </div>
             <div class="flex-col bg-white w-[30%]  text-center rounded-lg py-[2rem]">
-                <div class="p-[0.5rem]"><i class="fa-solid fa-laptop-code text-[4rem] text-red-500"></i></div>
+                <div class="p-[0.5rem] flex justify-center">
+                    <img src="../src/assets/homepage/web_development.png"/>
+                </div>
                 <div class="p-[0.5rem]"><span class="text-[1.2rem] font-[500]">Web Development</span></div>
                 <div class="p-[0.5rem]">
                 <p class="text-gray-500">
@@ -114,7 +121,7 @@ watchEffect(() => {
 
     </div>
 
-    <div ref="EducationRef" id="Education" class="bg-[#F0F0F6] mt-[2rem] w-[100%]">
+    <div ref="EducationRef" id="Education" class="bg-inherit mt-[2rem] w-[100%]">
         <div class="w-[100%]">
         <h2 class="text-[2rem] text-center font-semibold mb-4">Education</h2>
         <p class="text-gray-500 text-center">
@@ -129,7 +136,7 @@ watchEffect(() => {
                     </div>
                     <div class="flex gap-[3rem] flex-wrap">
                         <div>Student</div>
-                        <div class="text-white text-[12px] bg-red-500 py-[1px] px-[1rem]">
+                        <div class="text-white text-[12px] bg-[#C0392B] py-[1px] px-[1rem]">
                             2016-2020
                         </div>
                     </div>
@@ -154,7 +161,7 @@ watchEffect(() => {
                     </div>
                     <div class="flex gap-[3rem] flex-wrap">
                         <div>Student</div>
-                        <div class="text-white text-[12px] bg-red-500 py-[1px] px-[1rem]">
+                        <div class="text-white text-[12px] bg-[#C0392B] py-[1px] px-[1rem]">
                             2014-2016
                         </div>
                     </div>
@@ -175,7 +182,7 @@ watchEffect(() => {
         </div>
     </div>
 
-    <div ref="WorkRef" id="Work" class="bg-[#F0F0F6] mt-[2rem] w-[100%]">
+    <div ref="WorkRef" id="Work" class="bg-inherit mt-[2rem] w-[100%]">
         <div class="w-[100%]">
         <h2 class="text-[2rem] text-center font-semibold mb-4">Work History</h2>
         <p class="text-gray-500 text-center">
@@ -192,7 +199,7 @@ watchEffect(() => {
                     </div>
                     <div class="flex gap-[3rem] flex-wrap">
                         <div>Student</div>
-                        <div class="text-white text-[12px] bg-red-500 py-[1px] px-[1rem]">
+                        <div class="text-white text-[12px] bg-[#C0392B] py-[1px] px-[1rem]">
                             2022-Current
                         </div>
                     </div>
@@ -216,7 +223,7 @@ watchEffect(() => {
                     </div>
                     <div class="flex gap-[3rem] flex-wrap">
                         <div>Professional</div>
-                        <div class="text-white text-[12px] bg-red-500 py-[1px] px-[1rem]">
+                        <div class="text-white text-[12px] bg-[#C0392B] py-[1px] px-[1rem]">
                             2020-2022
                         </div>
                     </div>
@@ -243,7 +250,7 @@ watchEffect(() => {
 <style scoped>
 .main-container{
     width: 100%;
-    background: #F0F0F6;
+    background: #FAFAFA;
     display: flex;
     padding: 1rem;
     flex-direction: column;

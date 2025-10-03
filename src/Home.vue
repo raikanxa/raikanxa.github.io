@@ -198,10 +198,10 @@ watchEffect(() => {
             <div class="flex py-[1.2rem] justify-between">
                 <div class="w-[30%] text-left">
                     <div class="font-semibold mb-[2rem]">
-                        Professional
+                        Pathway Technologies and Services
                     </div>
                     <div class="flex gap-[3rem] flex-wrap">
-                        <div>Student</div>
+                        <div>Professional</div>
                         <div class="text-white text-[12px] bg-[#C0392B] py-[1px] px-[1rem]">
                             2022-Current
                         </div>

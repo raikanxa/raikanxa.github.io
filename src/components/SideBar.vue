@@ -122,7 +122,7 @@ import CustomScrollbar from "./CustomScrollBar.vue"
 
     <!-- CV Button -->
     <div class="px-6 py-6">
-      <a target="__" href="/public/CV.pdf" download>
+      <a target="__" href="/CV.pdf" download>
       <button
         class="w-full bg-[#C0392B] text-black font-semibold py-2 rounded flex items-center justify-center gap-2 hover:bg-[#2C3E50] hover:text-white transition"
       >
